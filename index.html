@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Chat with Kim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="lock-screen" id="lockScreen">
+    <div class="lock-status">
+      <span class="carrier">TM</span>
+      <span class="status-icons" aria-label="Phone status">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0l-2 2a12 12 0 0 0-16 0L2 9Zm4 4a9 9 0 0 1 12 0l-2 2a6 6 0 0 0-8 0l-2-2Zm4 4a3 3 0 0 1 4 0l-2 3-2-3Z"></path></svg>
+        <span class="battery-icon"><span></span></span>
+      </span>
+    </div>
+    <div class="lock-clock">
+      <p class="lock-date" id="lockDate">Sun, Nov 15</p>
+      <h1 id="lockClock">11:08</h1>
+    </div>
+    <article class="lock-notification" aria-label="New Messenger message from Kim Cayabyab">
+      <span class="notification-app-icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48">
+          <path fill="#087cff" d="M24 3C12.2 3 3 11.7 3 22.8c0 5.9 2.7 11.2 7 14.7V45l7.2-4c2.1.6 4.4.9 6.8.9 11.8 0 21-8.7 21-19.2S35.8 3 24 3Z"></path>
+          <path fill="#fff" d="m10.5 28 9.4-10 5.2 4.2 12.2-6.4-9.4 10-5.2-4.2L10.5 28Z"></path>
+        </svg>
+      </span>
+      <span class="notification-copy">
+        <span class="notification-heading">
+          <strong>Kim Cayabyab</strong>
+          <time>now</time>
+        </span>
+        <span class="notification-message">goodmorning po ma'am, may sasabihin po ako sa inyo</span>
+      </span>
+    </article>
+    <div class="lock-shortcuts" aria-hidden="true">
+      <span class="lock-shortcut">
+        <svg viewBox="0 0 24 24"><path d="M9 2h6v3l-1 2v3l3 4v7H7v-7l3-4V7L9 5V2Zm2 2v1h2V4h-2Zm-1 14h4v-3h-4v3Z"></path></svg>
+      </span>
+      <span class="lock-shortcut">
+        <svg viewBox="0 0 24 24"><path d="M8 4 6.5 6H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2.5L16 4H8Zm4 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"></path></svg>
+      </span>
+    </div>
+    <button class="unlock-prompt" id="unlockPhone" type="button" aria-label="Swipe up or tap to unlock">
+      <span class="unlock-label">Swipe up to open</span>
+      <span class="home-indicator" aria-hidden="true"></span>
+    </button>
+  </main>
+
+  <main class="passcode-screen" id="passcodeScreen" aria-labelledby="passcodeTitle" hidden>
+    <div class="passcode-status">
+      <span id="passcodeClock">11:08</span>
+      <span class="status-icons" aria-label="Phone status">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0l-2 2a12 12 0 0 0-16 0L2 9Zm4 4a9 9 0 0 1 12 0l-2 2a6 6 0 0 0-8 0l-2-2Zm4 4a3 3 0 0 1 4 0l-2 3-2-3Z"></path></svg>
+        <span class="battery-icon"><span></span></span>
+      </span>
+    </div>
+    <section class="passcode-content">
+      <h1 id="passcodeTitle">Enter Passcode</h1>
+      <div class="passcode-dots" id="passcodeDots" role="status" aria-label="0 of 6 digits entered">
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+        <span class="passcode-dot"></span>
+      </div>
+      <p class="passcode-message" id="passcodeMessage" role="status" aria-live="polite"></p>
+      <div class="keypad" aria-label="Passcode keypad">
+        <button class="keypad-key" type="button" data-digit="1" aria-label="1"><span>1</span></button>
+        <button class="keypad-key" type="button" data-digit="2" aria-label="2"><span>2</span><small>ABC</small></button>
+        <button class="keypad-key" type="button" data-digit="3" aria-label="3"><span>3</span><small>DEF</small></button>
+        <button class="keypad-key" type="button" data-digit="4" aria-label="4"><span>4</span><small>GHI</small></button>
+        <button class="keypad-key" type="button" data-digit="5" aria-label="5"><span>5</span><small>JKL</small></button>
+        <button class="keypad-key" type="button" data-digit="6" aria-label="6"><span>6</span><small>MNO</small></button>
+        <button class="keypad-key" type="button" data-digit="7" aria-label="7"><span>7</span><small>PQRS</small></button>
+        <button class="keypad-key" type="button" data-digit="8" aria-label="8"><span>8</span><small>TUV</small></button>
+        <button class="keypad-key" type="button" data-digit="9" aria-label="9"><span>9</span><small>WXYZ</small></button>
+        <span class="keypad-spacer" aria-hidden="true"></span>
+        <button class="keypad-key" type="button" data-digit="0" aria-label="0"><span>0</span></button>
+        <button class="keypad-spacer" id="deleteDigit" type="button" aria-label="Delete last digit">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 2 12l7 8h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H9Zm3.4 4L16 11.6 19.6 8 21 9.4 17.4 13l3.6 3.6-1.4 1.4-3.6-3.6-3.6 3.6-1.4-1.4 3.6-3.6L11 9.4 12.4 8Z"></path></svg>
+        </button>
+      </div>
+      <div class="passcode-actions">
+        <button id="emergencyButton" type="button">Emergency</button>
+        <button id="cancelPasscode" type="button">Cancel</button>
+      </div>
+    </section>
+  </main>
+
+  <main class="home-screen" id="homeScreen" hidden>
+    <div class="wallpaper-glow wallpaper-glow-one" aria-hidden="true"></div>
+    <div class="wallpaper-glow wallpaper-glow-two" aria-hidden="true"></div>
+    <div class="home-status">
+      <span id="homeClock">11:08</span>
+      <span class="status-icons" aria-label="Phone status">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0l-2 2a12 12 0 0 0-16 0L2 9Zm4 4a9 9 0 0 1 12 0l-2 2a6 6 0 0 0-8 0l-2-2Zm4 4a3 3 0 0 1 4 0l-2 3-2-3Z"></path></svg>
+        <span class="battery-icon"><span></span></span>
+      </span>
+    </div>
+    <div class="app-grid">
+      <button class="app-button" id="openMessenger" type="button" aria-label="Open Messenger conversation with Kim">
+        <span class="home-app-icon messenger-app-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <defs>
+              <linearGradient id="messengerGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#00c6ff"></stop>
+                <stop offset="1" stop-color="#087cff"></stop>
+              </linearGradient>
+            </defs>
+            <path fill="url(#messengerGradient)" d="M24 3C12.2 3 3 11.7 3 22.8c0 5.9 2.7 11.2 7 14.7V45l7.2-4c2.1.6 4.4.9 6.8.9 11.8 0 21-8.7 21-19.2S35.8 3 24 3Z"></path>
+            <path fill="#fff" d="m10.5 28 9.4-10 5.2 4.2 12.2-6.4-9.4 10-5.2-4.2L10.5 28Z"></path>
+          </svg>
+        </span>
+        <span class="app-label">Messenger</span>
+      </button>
+      <a class="app-button" href="https://open.spotify.com/track/1D4PL9B8gOg78jiHg3FvBb?si=cfd9828fae204865" target="_blank" rel="noopener noreferrer" aria-label="Open the requested Spotify song">
+        <span class="home-app-icon spotify-app-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="22" fill="#1ed760"></circle>
+            <path d="M12 18c8-2.4 17.2-.8 23.2 3" fill="none" stroke="#101010" stroke-linecap="round" stroke-width="3.2"></path>
+            <path d="M13.5 24c6.8-1.9 14.7-.5 20.1 2.9" fill="none" stroke="#101010" stroke-linecap="round" stroke-width="2.8"></path>
+            <path d="M15 29.5c5.8-1.4 11.6-.3 16.4 2.7" fill="none" stroke="#101010" stroke-linecap="round" stroke-width="2.5"></path>
+          </svg>
+        </span>
+        <span class="app-label">Spotify</span>
+      </a>
+    </div>
+    <div class="home-bottom" aria-hidden="true">
+      <span class="home-indicator"></span>
+    </div>
+  </main>
+
+  <main class="messenger" id="messenger" hidden>
+    <header class="chat-header">
+      <button class="back-button" id="backHome" type="button" aria-label="Back to home screen">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4 7.5 12l8 8"></path></svg>
+        <span class="unread-count" aria-hidden="true">2</span>
+      </button>
+      <img class="avatar" src="images/profile.jpg" alt="Kim's profile picture">
+      <div class="contact">
+        <h1>Kim Cayabyab</h1>
+        <p><span class="online-dot" aria-hidden="true"></span> Active now</p>
+      </div>
+      <div class="header-actions" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M6.6 2.8 9.5 2l2 4.7-2.1 1.6a15 15 0 0 0 6.3 6.3l1.6-2.1 4.7 2-.8 2.9a3 3 0 0 1-3.3 2.2A18.8 18.8 0 0 1 4.4 7.1a3 3 0 0 1 2.2-4.3Z"></path></svg>
+        <svg viewBox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h9A2.5 2.5 0 0 1 17 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 3 17.5v-11Zm14 3 5-3v11l-5-3v-5Z"></path></svg>
+      </div>
+    </header>
+
+    <section class="conversation" id="conversation" aria-label="Conversation" aria-live="polite">
+      <div class="conversation-notice">
+        <a href="#conversation">Learn more</a>
+        <p>You can now message and call each other and see info like active status and when you have read messages.</p>
+      </div>
+      <p class="date-divider">NOV 12 AT 6:56 PM</p>
+      <div class="message-row incoming historical-message">
+        <img class="avatar avatar-small" src="images/profile.jpg" alt="">
+        <div class="history-bubble-wrap">
+          <p class="bubble">ma’am, thank u po🙌 ❤️</p>
+          <span class="history-reaction" aria-label="Heart reaction">💛</span>
+        </div>
+      </div>
+      <p class="date-divider">NOV 12 AT 7:13 PM</p>
+      <div class="message-row outgoing historical-message">
+        <div class="history-video">
+          <video class="history-video-player" poster="images/video-preview.jpg" preload="metadata" playsinline aria-label="Video message">
+            <source src="videos/recent-conversation.mp4" type="video/mp4">
+          </video>
+          <button class="history-video-play" type="button" aria-label="Play video message">▶</button>
+          <span class="history-video-status" role="status" hidden></span>
+          <span class="history-video-duration">0:09</span>
+        </div>
+      </div>
+      <div class="message-row outgoing historical-message">
+        <div class="history-bubble-wrap">
+          <p class="bubble">gusto mo din 🤣</p>
+          <span class="history-reaction" aria-label="Laughing reaction">😆</span>
+        </div>
+      </div>
+      <div class="message-row incoming historical-message">
+        <img class="avatar avatar-small" src="images/profile.jpg" alt="">
+        <div class="history-bubble-wrap">
+          <p class="bubble">spotlight yarn hahahahahah</p>
+          <span class="history-reaction" aria-label="Laughing reaction">😆</span>
+        </div>
+      </div>
+      <p class="date-divider">TODAY</p>
+      <div class="message-row incoming">
+        <img class="avatar avatar-small" src="images/profile.jpg" alt="">
+        <p class="bubble">goodmorning po ma'am, may sasabihin po ako sa inyo</p>
+      </div>
+    </section>
+
+    <form class="composer" id="messageForm">
+      <div class="composer-tools" aria-hidden="true">
+        <span class="tool-icon plus-icon">+</span>
+        <svg class="tool-icon microphone" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1a7 7 0 0 0 6-6.9h-2Z"></path></svg>
+      </div>
+      <label class="sr-only" for="messageInput">Write a message</label>
+      <div class="input-wrap">
+        <textarea
+          id="messageInput"
+          name="message"
+          rows="1"
+          maxlength="5000"
+          placeholder="Aa"
+        ></textarea>
+        <span class="emoji-icon" aria-hidden="true">☻</span>
+      </div>
+      <button class="send-button" id="sendButton" type="submit" aria-label="Send a like" title="Send a like">
+        <svg class="send-arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3.4 20.4 21 12 3.4 3.6 3 10.1l12.2 1.9L3 13.9l.4 6.5Z"></path>
+        </svg>
+        <svg class="like-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M1.5 10h4v12h-4a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1Zm6 12V10l5.2-8a2 2 0 0 1 3.6 1.3L15.5 9h5a2 2 0 0 1 2 2l-1.6 9a2.5 2.5 0 0 1-2.5 2H7.5Z"></path>
+        </svg>
+      </button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
